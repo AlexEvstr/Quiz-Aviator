@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Evstr.Player
 {
     public class Detector : MonoBehaviour
     {
+        [SerializeField] private TaskManager _taskManager;
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Enemy"))
@@ -15,7 +15,9 @@ namespace Evstr.Player
             else if (collision.gameObject.CompareTag("Bonus"))
             {
                 collision.gameObject.SetActive(false);
-                Debug.Log("Open Task");
+                Time.timeScale = 0;
+                _taskManager.SetNewTask();
+
             }
         }
     }

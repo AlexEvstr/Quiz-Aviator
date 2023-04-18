@@ -6,7 +6,7 @@ namespace Evstr.Rocket
 {
     public class RocketMovement : MonoBehaviour
     {
-        private float _speed = 5.0f;
+        private float _speed = 10.0f;
 
         private void Update()
         {
