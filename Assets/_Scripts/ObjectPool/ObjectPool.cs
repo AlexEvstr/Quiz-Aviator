@@ -9,13 +9,11 @@ namespace Evstr
         public static ObjectPool SharedInstance;
         public List<GameObject> objectToPool;
 
-        public List<GameObject> pooledObstacles;
-        public List<GameObject> pooledStarsBonus;
+        public List<GameObject> pooledBonus;
         public List<GameObject> pooledEnemies;
         public List<GameObject> pooledRockets;
 
-        public int amountToPoolObstacle;
-        public int amountToPoolStarBonus;
+        public int amountToPoolBonus;
         public int amountToPoolEnemy;
         public int amountToPoolRocket;
 
@@ -31,57 +29,32 @@ namespace Evstr
 
         private void PoolObjects()
         {
-            PoolObstacles();
-            PoolStars();
+            PoolBonus();
             PoolEnemy();
             PoolRocket();
         }
 
-        public GameObject GetPooledObjectObstacle()
+        public GameObject GetPooledObjectBonus()
         {
-            for (int i = 0; i < amountToPoolObstacle; i++)
+            for (int i = 0; i < amountToPoolBonus; i++)
             {
-                if (!pooledObstacles[i].activeInHierarchy)
+                if (!pooledBonus[i].activeInHierarchy)
                 {
-                    return pooledObstacles[i];
+                    return pooledBonus[i];
                 }
             }
             return null;
         }
 
-        private void PoolObstacles()
+        private void PoolBonus()
         {
-            pooledObstacles = new List<GameObject>();
-            GameObject obstacle;
-            for (int i = 0; i < amountToPoolObstacle; i++)
+            pooledBonus = new List<GameObject>();
+            GameObject bonus;
+            for (int i = 0; i < amountToPoolBonus; i++)
             {
-                obstacle = Instantiate(objectToPool[0]);
-                obstacle.SetActive(false);
-                pooledObstacles.Add(obstacle);
-            }
-        }
-
-        public GameObject GetPooledObjectStarBonus()
-        {
-            for (int i = 0; i < amountToPoolStarBonus; i++)
-            {
-                if (!pooledStarsBonus[i].activeInHierarchy)
-                {
-                    return pooledStarsBonus[i];
-                }
-            }
-            return null;
-        }
-
-        private void PoolStars()
-        {
-            pooledStarsBonus = new List<GameObject>();
-            GameObject star;
-            for (int i = 0; i < amountToPoolStarBonus; i++)
-            {
-                star = Instantiate(objectToPool[1]);
-                star.SetActive(false);
-                pooledStarsBonus.Add(star);
+                bonus = Instantiate(objectToPool[0]);
+                bonus.SetActive(false);
+                pooledBonus.Add(bonus);
             }
         }
 
@@ -103,7 +76,7 @@ namespace Evstr
             GameObject enemy;
             for (int i = 0; i < amountToPoolEnemy; i++)
             {
-                enemy = Instantiate(objectToPool[2]);
+                enemy = Instantiate(objectToPool[1]);
                 enemy.SetActive(false);
                 pooledEnemies.Add(enemy);
             }
@@ -127,7 +100,7 @@ namespace Evstr
             GameObject rocket;
             for (int i = 0; i < amountToPoolRocket; i++)
             {
-                rocket = Instantiate(objectToPool[3]);
+                rocket = Instantiate(objectToPool[2]);
                 rocket.SetActive(false);
                 pooledRockets.Add(rocket);
             }
