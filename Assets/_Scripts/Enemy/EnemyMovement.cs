@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Evstr.Background
+namespace Evstr
 {
-    public class BackgroundLoop : MonoBehaviour
+    public class EnemyMovement : MonoBehaviour
     {
-        private float _speed = 2f;
+        private float _speed = 5.0f;
 
         private void Update()
         {
             transform.Translate(Vector2.down * _speed * Time.deltaTime);
-            if (transform.position.y < -12.5f)
+            if (transform.position.y < -6.0f)
             {
-                transform.position = new Vector2(-2.45f, 12.5f);
+                gameObject.SetActive(false);
             }
         }
     }
