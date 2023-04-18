@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Evstr.Enemy
+namespace Evstr.Rocket
 {
-    public class EnemyMovement : MonoBehaviour
+    public class RocketMovement : MonoBehaviour
     {
         private float _speed = 5.0f;
 
         private void Update()
         {
-            transform.Translate(Vector2.down * _speed * Time.deltaTime);
-            if (transform.position.y < -6.0f)
+            transform.Translate(Vector2.up * _speed * Time.deltaTime);
+
+            if (transform.position.y > 5.5f)
             {
                 gameObject.SetActive(false);
             }

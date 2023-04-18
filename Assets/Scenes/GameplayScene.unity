@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 28982113}
   - component: {fileID: 28982112}
+  - component: {fileID: 28982114}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -167,6 +168,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &28982114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28982111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00427f0f15ae940729038b39e2aedbe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1689665918}
 --- !u!1 &228803958
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,6 +812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1689665920}
   - component: {fileID: 1689665919}
+  - component: {fileID: 1689665921}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -845,7 +860,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b514463c25b794ad9a432281223386b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -872,6 +887,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1689665921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689665918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c6ceabdc08f40a69975a7bf569221c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1790662007
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,14 +979,15 @@ MonoBehaviour:
   - {fileID: 3452423854005994817, guid: f96ab95cf294e4d49b11ed5e6a75aa4b, type: 3}
   - {fileID: 3452423854005994817, guid: f96ab95cf294e4d49b11ed5e6a75aa4b, type: 3}
   - {fileID: 3452423854005994817, guid: f96ab95cf294e4d49b11ed5e6a75aa4b, type: 3}
+  - {fileID: 105410837369026592, guid: 4adbdcc3d31b5493a801b48855382048, type: 3}
   pooledObstacles: []
   pooledStarsBonus: []
   pooledEnemies: []
   pooledRockets: []
   amountToPoolObstacle: 0
   amountToPoolStarBonus: 0
-  amountToPoolEnemy: 5
-  amountToPoolRocket: 0
+  amountToPoolEnemy: 3
+  amountToPoolRocket: 5
 --- !u!4 &2048727279
 Transform:
   m_ObjectHideFlags: 0
