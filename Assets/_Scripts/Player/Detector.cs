@@ -5,12 +5,14 @@ namespace Evstr.Player
     public class Detector : MonoBehaviour
     {
         [SerializeField] private TaskManager _taskManager;
+        [SerializeField] private GameObject _gameOverPanel;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Game Over");
+                _gameOverPanel.SetActive(true);
+                Time.timeScale = 0;
             }
             else if (collision.gameObject.CompareTag("Bonus"))
             {
